@@ -7,7 +7,7 @@ import cgi
 form = cgi.FieldStorage()
 import mysql.connector
 import hashlib
-cnx = mysql.connector.connect(user = 'root', host = '127.0.0.1', database = 'delta')
+cnx = mysql.connector.connect(user = 'root', database = 'delta')
 cursor = cnx.cursor()
 
 
@@ -109,11 +109,11 @@ if "forgot" in form:
     cnx.commit()
 
     #Logging in to server
-    server.login("shohouda@gmail.com", "moneybeast123")
+    server.login("email_name@email.com", "password")
 
     #Send the email
     msg = "\n%s" %(message)
-    server.sendmail("shohouda@gmail.com", ["amro@utexas.edu", "amro1s@hotmail.com", "amromaster@gmail.com"], msg)
+    server.sendmail("email_name@gmail.com", ["email1", "email2", "email3"], msg)
     print "<p>New Password Sent to your emails</p>"
     print "<a href='http://localhost/secretary.html'>Return to Log In</a>" 
 
@@ -195,10 +195,10 @@ elif 'submitP' in form and 'oldpw' in form and 'newpw' in form and 'newpw2' in f
         server.starttls()
         message = "New Delta Text password: " +  form["newpw"].value
         #Logging in to server
-        server.login("shohouda@gmail.com", "moneybeast123")
+        server.login("email_name@email.com", "password")
         #Send the email
         msg = "\n%s" %(message)
-        server.sendmail("shohouda@gmail.com", ["amro@utexas.edu", "amro1s@hotmail.com", "amromaster@gmail.com"], msg)
+        server.sendmail("email_name@email.com", ["email1", "email2", "email3"], msg)
         print "<p><form method='POST' action='/cgi-bin/sec.py'>"
         print "<center>"
         print "<body style='background-color:00FFFF;'>"
