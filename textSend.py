@@ -46,7 +46,7 @@ def numMessages():
         print messages
 
 #Logging in to server
-server.login("amromaster@gmail.com" , "Guitar")
+server.login("email_address@email.com" , "password")
 
 #Taking input from html
 import cgi
